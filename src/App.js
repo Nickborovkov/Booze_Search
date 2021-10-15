@@ -1,11 +1,12 @@
 import './App.css';
-import React, {lazy, Suspense} from "react";
+import React, {lazy, Suspense, useEffect, useState} from "react";
 import AppHeader from "./components/header/appHeader";
 import {Redirect, Route, Switch} from "react-router-dom";
 import Preloader from "./components/common/preloader/Preloader";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import appTheme from "./utils/theme/appTheme";
 import AppFooter from "./components/footer/Footer";
+import Button from "@mui/material/Button";
 
 const Cocktails = lazy( () =>
     import(/* webpackChunkName: "SearchByCocktail" */"./components/searchByCocktail/SearchByCocktail") )
@@ -17,6 +18,19 @@ const ErrorPage = lazy( () =>
     import(/* webpackChunkName: "Error" */"./components/common/errorPage/ErrorPage") )
 
 const App = () => {
+
+    const [showButton, setShowButton] = useState(false)
+
+    useEffect(() => {
+        window.addEventListener(`scroll`, () => {
+            if (window.pageYOffset > 800) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+        });
+    }, []);
+
   return (
       <ThemeProvider theme={appTheme}>
         <AppHeader/>
@@ -37,6 +51,16 @@ const App = () => {
             </Suspense>
         </div>
           <AppFooter/>
+
+          {showButton &&
+          <Button
+              sx={{position: `fixed`, bottom: `100px`, right: `100px`, opacity: 0.7}}
+              variant="contained"
+              color={'button'}
+              onClick={ () => {window.scrollTo({top: 0, behavior: "smooth"})} }
+          >To top
+          </Button>}
+
       </ThemeProvider>
   )
 }
