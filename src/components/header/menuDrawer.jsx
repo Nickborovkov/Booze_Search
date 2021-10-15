@@ -6,6 +6,8 @@ import Drawer from "@mui/material/Drawer";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import {NavLink} from "react-router-dom";
+import LocalBarIcon from '@mui/icons-material/LocalBar';
+import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
 
 const MenuDrawer = ({open, setOpen}) => {
     return (
@@ -20,6 +22,7 @@ const MenuDrawer = ({open, setOpen}) => {
                 <Box
                     sx={{width: 250}}
                     role="presentation"
+
                 >
                     <List>
                         <ListItem>
@@ -27,14 +30,26 @@ const MenuDrawer = ({open, setOpen}) => {
                         </ListItem>
                         <Divider></Divider>
 
-                        <NavLink to='/cocktails' style={{textDecoration: `none`, color: `#333`}}>
-                            <ListItem sx={{textDecoration: `none`}} button onClick={ () => {setOpen(false)} }>
-                                <ListItemText primary={`Search by coctails`}/>
+                        <NavLink
+                            exact
+                            to='/cocktails'
+                            style={{textDecoration: `none`, color: `#333`}}
+                            activeStyle={{color: `#00e676`}}
+                        >
+                            <ListItem button onClick={ () => {setOpen(false)} }>
+                                <LocalBarIcon/>
+                                <ListItemText primary={`Search by cocktails`}/>
                             </ListItem>
                         </NavLink>
 
-                        <NavLink to='/ingredients' style={{textDecoration: `none`, color: `#333`}}>
+                        <NavLink
+                            exact
+                            to='/ingredients'
+                            style={{textDecoration: `none`, color: `#333`}}
+                            activeStyle={{color: `#00e676`}}
+                        >
                             <ListItem button onClick={ () => {setOpen(false)} }>
+                                <LocalDrinkIcon/>
                                 <ListItemText primary={`Search by ingredients`}/>
                             </ListItem>
                         </NavLink>

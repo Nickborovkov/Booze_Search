@@ -8,6 +8,9 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuDrawer from "./menuDrawer";
 import {NavLink} from "react-router-dom";
+import LocalBarIcon from '@mui/icons-material/LocalBar';
+import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
+import appLogo from '../../assets/images/appLogo.png'
 
 const AppHeader = () => {
 
@@ -23,31 +26,56 @@ const AppHeader = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{mr: 2}}
-                        onClick={toggleMenu}
-                    >
-                        <MenuIcon/>
-                    </IconButton>
+
+                    <Box display={{ xs: 'block', md: 'none' }}>
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            sx={{mr: 2}}
+                            onClick={toggleMenu}
+                        >
+                            <MenuIcon/>
+                        </IconButton>
+                    </Box>
 
                     <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                        <NavLink to='/'style={{textDecoration: `none`, color: `#fff`}}>
-                            Cocktails app
+                        <NavLink to='/'style={{textDecoration: `none`, color: `#fff`, display: `flex`}}>
+                            <div style={{width: `40px`, paddingTop: `15px`}}>
+                                <img src={appLogo} alt="appLogo" style={{width: `100%`}}/>
+                            </div>
+                            <p style={{lineHeight: `40px`}}>Booze Search app</p>
                         </NavLink>
                     </Typography>
 
-                    <NavLink to='/cocktails' style={{textDecoration: `none`, color: `#fff`}}>
-                        <Button color="inherit">Search by cocktails</Button>
-                    </NavLink>
-                    <NavLink to='/ingredients' style={{textDecoration: `none`, color: `#fff`}}>
-                        <Button color="inherit">Search by ingredients</Button>
-                    </NavLink>
+                    <Box display={{ xs: 'none', md: 'block' }}>
+                        <NavLink
+                            exact
+                            to='/cocktails'
+                            style={{textDecoration: `none`, color: `#fff`, paddingBottom: `10px`}}
+                            activeStyle={{borderBottom: `2px solid #00e676`, color: `#00e676`}}
+                        >
+                            <Button color="inherit">
+                                <LocalBarIcon/>
+                                Search by cocktails
+                            </Button>
+                        </NavLink>
+                        <NavLink
+                            exact
+                            to='/ingredients'
+                            style={{textDecoration: `none`, color: `#fff`, paddingBottom: `10px`}}
+                            activeStyle={{borderBottom: `2px solid #00e676`, color: `#00e676`}}
+                        >
+                            <Button color="inherit">
+                                <LocalDrinkIcon/>
+                                Search by ingredients
+                            </Button>
+                        </NavLink>
+                    </Box>
+
                 </Toolbar>
             </AppBar>
 
