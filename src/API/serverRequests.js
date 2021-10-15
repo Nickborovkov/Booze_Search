@@ -9,17 +9,10 @@ export const searchForCoctails = {
     getCocktailsByName (cocktailName = `margarita`) {
         return instance.get(`search.php?s=${cocktailName}`)
     },
-    getCocktailByID (cocktailId = 11007) {
-        return instance.get(`lookup.php?i=${cocktailId}`)
-    },
-}
-
-
-export const searchForIngredients = {
-    getIngredientsByName (ingredientName = `gin`) {
+    getCocktailsByIngredient (ingredientName = `gin`) {
         return instance.get(`filter.php?i=${ingredientName}`)
     },
-    getIngredientByID (ingredientId = 552) {
-        return instance.get(`search.php?iid=${ingredientId}`)
+    getCocktailByID (cocktailId = 11007) {
+        return instance.get(`lookup.php?i=${cocktailId}`)
     },
 }
