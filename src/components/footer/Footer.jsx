@@ -17,8 +17,10 @@ const AppFooter = () => {
                     rel="noopener"
                     sx={{color: `#00e676`}}
                 >
-                    <LinkIcon/>
-                    API
+                    <Box sx={{display: `flex`, justifyContent: `center`, alignItems: `center`}}>
+                        <LinkIcon/>
+                        <p>API</p>
+                    </Box>
                 </Link>
                 <Box sx={{ flexGrow: 1 }} />
                 <Link
@@ -28,8 +30,10 @@ const AppFooter = () => {
                     rel="noopener"
                     sx={{color: `#00e676`}}
                     >
-                    <GitHubIcon/>
-                    Made by Nick Borovkov
+                    <Box sx={{display: `flex`, justifyContent: `center`, alignItems: `center`}}>
+                        <GitHubIcon/>
+                        <p>Made by Nick Borovkov</p>
+                    </Box>
                 </Link>
             </Toolbar>
         </AppBar>
