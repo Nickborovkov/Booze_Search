@@ -8,3 +8,4 @@
 // `todo : create README.md`
 // `todo : change icons`
 // `todo : default value in inputs?`
+// `todo : query filters`
