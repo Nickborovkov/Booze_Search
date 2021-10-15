@@ -1,5 +1,5 @@
 import {searchForCoctails} from "../API/serverRequests";
-import {setIsLoading} from "./commonReducer";
+import {addNewError, setIsLoading} from "./commonReducer";
 
 const SET_COCKTAILS = `cocktailsDB/cocktails/SET_COCKTAILS`
 const SET_SPECIFIC_COCKTAIL = `cocktailsDB/cocktails/SET_SPECIFIC_COCKTAIL`
@@ -32,7 +32,7 @@ export default cocktailsReducer
 
 
 //AC
-const setCoctailsList = (cocktailsList) =>
+const setCoctails = (cocktailsList) =>
     ({type: SET_COCKTAILS, cocktailsList})
 
 const setSpecificCocktail = (specificCocktail) =>
@@ -40,16 +40,46 @@ const setSpecificCocktail = (specificCocktail) =>
 
 
 //THUNK
-export const getCocktailsList = (cocktailName) => async dispatch => {
-    dispatch(setIsLoading(true))
-    const response = await searchForCoctails.getCocktailsByName(cocktailName)
-    dispatch(setCoctailsList(response.data.drinks))
-    dispatch(setIsLoading(false))
+export const getCocktailsByName = (cocktailName) => async dispatch => {
+    try {
+        dispatch(setIsLoading(true))
+        dispatch(addNewError(null))
+        const response = await searchForCoctails.getCocktailsByName(cocktailName)
+        if(response.data.drinks){
+            dispatch(setCoctails(response.data.drinks))
+        }else {
+            dispatch(addNewError(`No results`))
+        }
+        dispatch(setIsLoading(false))
+    }catch (error) {
+        dispatch(addNewError(error.name))
+    }
+}
+
+export const getCocktailsByIngredient = (cocktailName) => async dispatch => {
+    try {
+        dispatch(setIsLoading(true))
+        dispatch(addNewError(null))
+        const response = await searchForCoctails.getCocktailsByIngredient(cocktailName)
+        if(response.data.drinks){
+            dispatch(setCoctails(response.data.drinks))
+        }else {
+            dispatch(addNewError(`No results`))
+        }
+        dispatch(setIsLoading(false))
+    }catch (error) {
+        dispatch(addNewError(error.name))
+    }
 }
 
 export const getSpecificCocktail = (cocktailId) => async dispatch => {
-    dispatch(setIsLoading(true))
-    const response = await searchForCoctails.getCocktailByID(cocktailId)
-    dispatch(setSpecificCocktail(response.data.drinks[0]))
-    dispatch(setIsLoading(false))
+    try {
+        dispatch(setIsLoading(true))
+        const response = await searchForCoctails.getCocktailByID(cocktailId)
+        dispatch(setSpecificCocktail(response.data.drinks[0]))
+        dispatch(setIsLoading(false))
+    }catch (error) {
+        dispatch(addNewError(error.name))
+    }
+
 }
