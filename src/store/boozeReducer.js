@@ -1,50 +1,59 @@
-import {searchForCoctails} from "../API/serverRequests";
+import {searchForBooze} from "../API/serverRequests";
 import {addNewError, setIsLoading} from "./commonReducer";
 
 const SET_COCKTAILS = `cocktailsDB/cocktails/SET_COCKTAILS`
 const SET_SPECIFIC_COCKTAIL = `cocktailsDB/cocktails/SET_SPECIFIC_COCKTAIL`
+const SET_INGREDIENT = `cocktailsDB/cocktails/SET_INGREDIENT`
 
 
 const initialState = {
-    cocktailsList: null,
-    specificCocktail: null
+    boozeList: null,
+    specificBooze: null,
+    ingredient: null,
 }
 
 
-const cocktailsReducer = (state = initialState, action)=> {
+const boozeReducer = (state = initialState, action)=> {
     switch (action.type) {
         case SET_COCKTAILS:
             return {
                 ...state,
-                cocktailsList: action.cocktailsList
+                boozeList: action.boozeList
             }
         case SET_SPECIFIC_COCKTAIL:
             return {
                 ...state,
-                specificCocktail: action.specificCocktail
+                specificBooze: action.specificBooze
+            }
+        case SET_INGREDIENT:
+            return {
+                ...state,
+                ingredient: action.ingredient
             }
         default:
             return state
     }
 }
 
-export default cocktailsReducer
+export default boozeReducer
 
 
 //AC
-const setCoctails = (cocktailsList) =>
-    ({type: SET_COCKTAILS, cocktailsList})
+const setCoctails = (boozeList) =>
+    ({type: SET_COCKTAILS, boozeList})
 
-const setSpecificCocktail = (specificCocktail) =>
-    ({type: SET_SPECIFIC_COCKTAIL, specificCocktail})
+const setSpecificCocktail = (specificBooze) =>
+    ({type: SET_SPECIFIC_COCKTAIL, specificBooze})
 
+const setIngredient = (ingredient) =>
+    ({type: SET_INGREDIENT, ingredient})
 
 //THUNK
 export const getCocktailsByName = (cocktailName) => async dispatch => {
     try {
         dispatch(setIsLoading(true))
         dispatch(addNewError(null))
-        const response = await searchForCoctails.getCocktailsByName(cocktailName)
+        const response = await searchForBooze.getBoozeByName(cocktailName)
         if(response.data.drinks){
             dispatch(setCoctails(response.data.drinks))
         }else {
@@ -60,7 +69,7 @@ export const getCocktailsByIngredient = (cocktailName) => async dispatch => {
     try {
         dispatch(setIsLoading(true))
         dispatch(addNewError(null))
-        const response = await searchForCoctails.getCocktailsByIngredient(cocktailName)
+        const response = await searchForBooze.getBoozeByIngredient(cocktailName)
         if(response.data.drinks){
             dispatch(setCoctails(response.data.drinks))
         }else {
@@ -75,8 +84,20 @@ export const getCocktailsByIngredient = (cocktailName) => async dispatch => {
 export const getSpecificCocktail = (cocktailId) => async dispatch => {
     try {
         dispatch(setIsLoading(true))
-        const response = await searchForCoctails.getCocktailByID(cocktailId)
+        const response = await searchForBooze.getBoozeByID(cocktailId)
         dispatch(setSpecificCocktail(response.data.drinks[0]))
+        dispatch(setIsLoading(false))
+    }catch (error) {
+        dispatch(addNewError(error.name))
+    }
+
+}
+
+export const getIngredientByName = (ingredientName) => async dispatch => {
+    try {
+        dispatch(setIsLoading(true))
+        const response = await searchForBooze.getIngredientByName(ingredientName)
+        dispatch(setIngredient(response.data.ingredients[0]))
         dispatch(setIsLoading(false))
     }catch (error) {
         dispatch(addNewError(error.name))
