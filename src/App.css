@@ -1,3 +1,6 @@
+*{
+    scroll-behavior: smooth;
+}
 .content{
     margin-top: 100px;
 }

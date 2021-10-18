@@ -8,7 +8,11 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const AppFooter = () => {
     return (
-        <AppBar position="static" color="primary" sx={{ top: 'auto', bottom: 0 }}>
+        <AppBar
+            position="static"
+            color="primary"
+            sx={{ top: 'auto', bottom: 0 }}
+        >
             <Toolbar>
                 <Link
                     href='https://www.thecocktaildb.com/api.php'
@@ -17,7 +21,9 @@ const AppFooter = () => {
                     rel="noopener"
                     sx={{color: `#00e676`}}
                 >
-                    <Box sx={{display: `flex`, justifyContent: `center`, alignItems: `center`}}>
+                    <Box
+                        sx={{display: `flex`, justifyContent: `center`, alignItems: `center`}}
+                    >
                         <LinkIcon/>
                         <p>API</p>
                     </Box>
@@ -30,7 +36,9 @@ const AppFooter = () => {
                     rel="noopener"
                     sx={{color: `#00e676`}}
                     >
-                    <Box sx={{display: `flex`, justifyContent: `center`, alignItems: `center`}}>
+                    <Box
+                        sx={{display: `flex`, justifyContent: `center`, alignItems: `center`}}
+                    >
                         <GitHubIcon/>
                         <p>Made by Nick Borovkov</p>
                     </Box>

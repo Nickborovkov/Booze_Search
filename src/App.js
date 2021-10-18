@@ -1,19 +1,20 @@
 import './App.css';
 import React, {lazy, Suspense, useEffect, useState} from "react";
 import AppHeader from "./components/header/appHeader";
-import {Redirect, Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import Preloader from "./components/common/preloader/Preloader";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import appTheme from "./utils/theme/appTheme";
 import AppFooter from "./components/footer/Footer";
 import Button from "@mui/material/Button";
+import HomePage from "./components/homePage/HomePage";
+import Ingredients from "./components/ingredients/Ingredients";
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 const Cocktails = lazy( () =>
-    import(/* webpackChunkName: "SearchByCocktail" */"./components/searchByCocktail/SearchByCocktail") )
+    import(/* webpackChunkName: "SearchBooze" */"./components/searchBooze/SearchBooze") )
 const SpecificCocktail = lazy( () =>
-    import(/* webpackChunkName: "SpecificCocktail" */"./components/specificCocktail/SpecificCocktail") )
-const Ingredients = lazy( () =>
-    import(/* webpackChunkName: "SearchByIngredient" */"./components/searchByIngredient/SearchByIngredient") )
+    import(/* webpackChunkName: "SpecificBooze" */"./components/specificBooze/SpecificBooze") )
 const ErrorPage = lazy( () =>
     import(/* webpackChunkName: "Error" */"./components/common/errorPage/ErrorPage") )
 
@@ -37,14 +38,16 @@ const App = () => {
         <div className='content'>
             <Suspense fallback={<Preloader/>}>
                 <Switch>
-                    <Route exact path='/cocktails'
-                           render={() => <Cocktails/>}/>
+                    <Route exact path='/cocktails/ByName'
+                           render={() => <Cocktails searchType={`byName`}/>}/>
+                    <Route exact path='/cocktails/ByIngredient'
+                           render={() => <Cocktails searchType={`byIngredient`}/>}/>
                     <Route exact path='/cocktails/cocktail/:id'
                            render={(props) => <SpecificCocktail {...props}/>}/>
-                    <Route path='/ingredients'
-                           render={() => <Ingredients/>}/>
+                    <Route exact path='/ingredient/:name'
+                           render={(props) => <Ingredients {...props}/>}/>
                     <Route exact path='/'
-                           render={() => <Redirect to='/cocktails'/>}/>
+                           render={(props) => <HomePage {...props}/>}/>
                     <Route exact path='*'
                            render={(props) => <ErrorPage {...props}/>}/>
                 </Switch>
@@ -54,11 +57,13 @@ const App = () => {
 
           {showButton &&
           <Button
-              sx={{position: `fixed`, bottom: `100px`, right: `100px`, opacity: 0.7}}
+              sx={{position: `fixed`, bottom: `100px`, right: `10px`, opacity: 0.6}}
               variant="contained"
               color={'button'}
+              size='small'
               onClick={ () => {window.scrollTo({top: 0, behavior: "smooth"})} }
-          >To top
+          >
+              <ArrowDropUpIcon/>top
           </Button>}
 
       </ThemeProvider>

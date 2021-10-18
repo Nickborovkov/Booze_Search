@@ -32,7 +32,7 @@ const MenuDrawer = ({open, setOpen}) => {
 
                         <NavLink
                             exact
-                            to='/cocktails'
+                            to='/cocktails/ByName'
                             style={{textDecoration: `none`, color: `#333`}}
                             activeStyle={{color: `#00e676`}}
                         >
@@ -44,7 +44,7 @@ const MenuDrawer = ({open, setOpen}) => {
 
                         <NavLink
                             exact
-                            to='/ingredients'
+                            to='/cocktails/ByIngredient'
                             style={{textDecoration: `none`, color: `#333`}}
                             activeStyle={{color: `#00e676`}}
                         >

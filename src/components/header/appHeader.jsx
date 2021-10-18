@@ -47,14 +47,14 @@ const AppHeader = () => {
                             <div style={{width: `40px`, paddingTop: `15px`}}>
                                 <img src={appLogo} alt="appLogo" style={{width: `100%`}}/>
                             </div>
-                            <p style={{lineHeight: `40px`}}>Booze Search app</p>
+                            <p style={{lineHeight: `40px`}}>Booze Search</p>
                         </NavLink>
                     </Typography>
 
                     <Box display={{ xs: 'none', md: 'block' }}>
                         <NavLink
                             exact
-                            to='/cocktails'
+                            to='/cocktails/ByName'
                             style={{textDecoration: `none`, color: `#fff`, paddingBottom: `10px`}}
                             activeStyle={{borderBottom: `2px solid #00e676`, color: `#00e676`}}
                         >
@@ -65,7 +65,7 @@ const AppHeader = () => {
                         </NavLink>
                         <NavLink
                             exact
-                            to='/ingredients'
+                            to='/cocktails/ByIngredient'
                             style={{textDecoration: `none`, color: `#fff`, paddingBottom: `10px`}}
                             activeStyle={{borderBottom: `2px solid #00e676`, color: `#00e676`}}
                         >
