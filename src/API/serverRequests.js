@@ -5,14 +5,17 @@ const instance = axios.create({
 })
 
 
-export const searchForCoctails = {
-    getCocktailsByName (cocktailName = `margarita`) {
+export const searchForBooze = {
+    getBoozeByName (cocktailName) {
         return instance.get(`search.php?s=${cocktailName}`)
     },
-    getCocktailsByIngredient (ingredientName = `gin`) {
+    getBoozeByIngredient (ingredientName) {
         return instance.get(`filter.php?i=${ingredientName}`)
     },
-    getCocktailByID (cocktailId = 11007) {
+    getBoozeByID (cocktailId) {
         return instance.get(`lookup.php?i=${cocktailId}`)
+    },
+    getIngredientByName (ingredientName) {
+        return instance.get(`search.php?i=${ingredientName}`)
     },
 }
