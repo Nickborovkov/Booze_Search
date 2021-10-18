@@ -1,11 +1,11 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunk from "redux-thunk";
 import commonReducer from "./commonReducer";
-import cocktailsReducer from "./cocktailsReducer";
+import boozeReducer from "./boozeReducer";
 
 const reducers = combineReducers({
     common: commonReducer,
-    cocktails: cocktailsReducer,
+    booze: boozeReducer,
 })
 
 const store = createStore(reducers, applyMiddleware(thunk))
