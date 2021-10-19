@@ -1,0 +1,40 @@
+{
+  "files": {
+    "static/js/0.32f47a3c.chunk.js": "/Booze_Search/static/js/0.32f47a3c.chunk.js",
+    "static/js/0.32f47a3c.chunk.js.map": "/Booze_Search/static/js/0.32f47a3c.chunk.js.map",
+    "Error.js": "/Booze_Search/static/js/Error.48c6dd24.chunk.js",
+    "Error.js.map": "/Booze_Search/static/js/Error.48c6dd24.chunk.js.map",
+    "SearchBooze.js": "/Booze_Search/static/js/SearchBooze.61cf9cfd.chunk.js",
+    "SearchBooze.js.map": "/Booze_Search/static/js/SearchBooze.61cf9cfd.chunk.js.map",
+    "SpecificBooze.js": "/Booze_Search/static/js/SpecificBooze.81591adb.chunk.js",
+    "SpecificBooze.js.map": "/Booze_Search/static/js/SpecificBooze.81591adb.chunk.js.map",
+    "main.css": "/Booze_Search/static/css/main.84e6c52b.chunk.css",
+    "main.js": "/Booze_Search/static/js/main.c76a7f8d.chunk.js",
+    "main.js.map": "/Booze_Search/static/js/main.c76a7f8d.chunk.js.map",
+    "runtime-main.js": "/Booze_Search/static/js/runtime-main.b2b64e6c.js",
+    "runtime-main.js.map": "/Booze_Search/static/js/runtime-main.b2b64e6c.js.map",
+    "static/css/6.fbf11a07.chunk.css": "/Booze_Search/static/css/6.fbf11a07.chunk.css",
+    "static/js/6.f8e36ddc.chunk.js": "/Booze_Search/static/js/6.f8e36ddc.chunk.js",
+    "static/js/6.f8e36ddc.chunk.js.map": "/Booze_Search/static/js/6.f8e36ddc.chunk.js.map",
+    "static/js/7.0b54306d.chunk.js": "/Booze_Search/static/js/7.0b54306d.chunk.js",
+    "static/js/7.0b54306d.chunk.js.map": "/Booze_Search/static/js/7.0b54306d.chunk.js.map",
+    "index.html": "/Booze_Search/index.html",
+    "static/css/6.fbf11a07.chunk.css.map": "/Booze_Search/static/css/6.fbf11a07.chunk.css.map",
+    "static/css/main.84e6c52b.chunk.css.map": "/Booze_Search/static/css/main.84e6c52b.chunk.css.map",
+    "static/js/6.f8e36ddc.chunk.js.LICENSE.txt": "/Booze_Search/static/js/6.f8e36ddc.chunk.js.LICENSE.txt",
+    "static/js/7.0b54306d.chunk.js.LICENSE.txt": "/Booze_Search/static/js/7.0b54306d.chunk.js.LICENSE.txt",
+    "static/media/appLogo.3b51cde8.png": "/Booze_Search/static/media/appLogo.3b51cde8.png",
+    "static/media/imagePlaceholder.jpg": "/Booze_Search/static/media/imagePlaceholder.3d378c83.jpg",
+    "static/media/300.css": "/Booze_Search/static/media/roboto-vietnamese-300-normal.af9afdc1.woff2",
+    "static/media/400.css": "/Booze_Search/static/media/roboto-vietnamese-400-normal.c0bec65d.woff2",
+    "static/media/500.css": "/Booze_Search/static/media/roboto-vietnamese-500-normal.b8e494da.woff2",
+    "static/media/700.css": "/Booze_Search/static/media/roboto-vietnamese-700-normal.3096f18a.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b2b64e6c.js",
+    "static/css/6.fbf11a07.chunk.css",
+    "static/js/6.f8e36ddc.chunk.js",
+    "static/css/main.84e6c52b.chunk.css",
+    "static/js/main.c76a7f8d.chunk.js"
+  ]
+}
