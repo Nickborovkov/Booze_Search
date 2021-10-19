@@ -13,6 +13,7 @@ const SearchBooze = ({searchType}) => {
     //State
     const dispatch = useDispatch()
     const boozeList = useSelector(state => state.booze.boozeList)
+    const redirectIngredient = useSelector(state => state.booze.redirectIngredient)
     const isLoading = useSelector(state => state.common.isLoading)
     const error = useSelector(state => state.common.error)
 
@@ -28,6 +29,13 @@ const SearchBooze = ({searchType}) => {
         }
         window.scrollTo(-300, 0)
     },[dispatch, cocktail, searchType])
+
+    //Setting Cocktails with ingredient from ingredients component
+    useEffect(()=>{
+        if(redirectIngredient){
+            dispatch(getCocktailsByIngredient(redirectIngredient))
+        }
+    },[dispatch, redirectIngredient])
 
     return (
         <Box>
@@ -46,6 +54,7 @@ const SearchBooze = ({searchType}) => {
             <SearchField
                 searchType={searchType}
                 items={cocktail}
+                redirectIngredient={redirectIngredient}
                 setItems={setCocktail}/>
 
             {/*Error case*/}
@@ -79,7 +88,7 @@ const SearchBooze = ({searchType}) => {
             {!isLoading && boozeList && !error &&
             <Grid
                 container
-                spacing={2}
+                spacing={0}
                 justifyContent="center"
                 sx={{width: `80%`, margin: `50px auto`}}
             >
