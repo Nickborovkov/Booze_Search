@@ -11,6 +11,7 @@ import HomePage from "./components/homePage/HomePage";
 import Ingredients from "./components/ingredients/Ingredients";
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
+//Lazy loading
 const Cocktails = lazy( () =>
     import(/* webpackChunkName: "SearchBooze" */"./components/searchBooze/SearchBooze") )
 const SpecificCocktail = lazy( () =>
@@ -20,6 +21,7 @@ const ErrorPage = lazy( () =>
 
 const App = () => {
 
+    //Back ti top button listener
     const [showButton, setShowButton] = useState(false)
 
     useEffect(() => {
@@ -55,6 +57,7 @@ const App = () => {
         </div>
           <AppFooter/>
 
+          {/*Back to top button*/}
           {showButton &&
           <Button
               sx={{position: `fixed`, bottom: `100px`, right: `10px`, opacity: 0.6}}
