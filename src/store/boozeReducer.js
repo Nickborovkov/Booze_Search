@@ -4,12 +4,14 @@ import {addNewError, setIsLoading} from "./commonReducer";
 const SET_COCKTAILS = `cocktailsDB/cocktails/SET_COCKTAILS`
 const SET_SPECIFIC_COCKTAIL = `cocktailsDB/cocktails/SET_SPECIFIC_COCKTAIL`
 const SET_INGREDIENT = `cocktailsDB/cocktails/SET_INGREDIENT`
+const SET_REDIRECT_INGREDIENT = `cocktailsDB/cocktails/SET_REDIRECT_INGREDIENT`
 
 
 const initialState = {
     boozeList: null,
     specificBooze: null,
     ingredient: null,
+    redirectIngredient: null,
 }
 
 
@@ -30,6 +32,11 @@ const boozeReducer = (state = initialState, action)=> {
                 ...state,
                 ingredient: action.ingredient
             }
+        case SET_REDIRECT_INGREDIENT:
+            return {
+                ...state,
+                redirectIngredient: action.redirectIngredient
+            }
         default:
             return state
     }
@@ -47,6 +54,9 @@ const setSpecificCocktail = (specificBooze) =>
 
 const setIngredient = (ingredient) =>
     ({type: SET_INGREDIENT, ingredient})
+
+const setRedirectIngredient = (redirectIngredient) =>
+    ({type: SET_REDIRECT_INGREDIENT, redirectIngredient})
 
 //THUNK
 export const getCocktailsByName = (cocktailName) => async dispatch => {
@@ -71,7 +81,8 @@ export const getCocktailsByIngredient = (cocktailName) => async dispatch => {
         dispatch(addNewError(null))
         const response = await searchForBooze.getBoozeByIngredient(cocktailName)
         if(response.data.drinks){
-            dispatch(setCoctails(response.data.drinks))
+            await dispatch(setCoctails(response.data.drinks))
+            dispatch(setRedirectIngredient(false))
         }else {
             dispatch(addNewError(`No results`))
         }
@@ -96,6 +107,7 @@ export const getSpecificCocktail = (cocktailId) => async dispatch => {
 export const getIngredientByName = (ingredientName) => async dispatch => {
     try {
         dispatch(setIsLoading(true))
+        dispatch(setRedirectIngredient(ingredientName))
         const response = await searchForBooze.getIngredientByName(ingredientName)
         dispatch(setIngredient(response.data.ingredients[0]))
         dispatch(setIsLoading(false))

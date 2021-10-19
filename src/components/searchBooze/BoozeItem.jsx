@@ -9,10 +9,10 @@ import imagePlaceholder from "../../assets/images/imagePlaceholder.jpg"
 
 const BoozeItem = ({item}) => {
     return (
-
         <Grid
             item
             xs={12} md={6} lg={4} xl={3}
+            sx={{margin: `10px`}}
         >
             <NavLink
                 to={`/cocktails/cocktail/${item.idDrink}`}
@@ -37,7 +37,6 @@ const BoozeItem = ({item}) => {
                 </Card>
             </NavLink>
         </Grid>
-
 
     )
 }

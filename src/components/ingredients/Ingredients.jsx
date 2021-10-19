@@ -8,6 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import CardActions from "@mui/material/CardActions";
 import Button from "@mui/material/Button";
+import {NavLink} from "react-router-dom";
 
 const Ingredients = (props) => {
 
@@ -56,7 +57,12 @@ const Ingredients = (props) => {
                             variant="contained"
                             size="small"
                         >
-                            More booze with this ingredient
+                            <NavLink
+                                to={`/cocktails/ByIngredient`}
+                                style={{textDecoration: `none`, color: `#ffffff`}}
+                            >
+                                More booze with this ingredient
+                            </NavLink>
                         </Button>
                     </CardActions>
                 </Card>
