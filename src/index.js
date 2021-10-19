@@ -6,15 +6,17 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import {BrowserRouter} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "./store/store";
 
 ReactDOM.render(
-    <BrowserRouter>
+    //When using BrowserRouter on github pages there's a bug with page refreshing
+    //Used HashRouter instead
+    <HashRouter>
         <Provider store={store}>
             <App />
         </Provider>
-    </BrowserRouter>,
+    </HashRouter>,
     document.getElementById('root')
 )
