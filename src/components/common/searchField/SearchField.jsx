@@ -6,7 +6,7 @@ import * as yup from 'yup'
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-const SearchField = ({searchType, items, setItems}) => {
+const SearchField = ({searchType, items, redirectIngredient, setItems}) => {
 
     const regexp = /^[a-zA-Z0-9_., -]*$/
 
@@ -21,16 +21,16 @@ const SearchField = ({searchType, items, setItems}) => {
     return (
         <Formik
             initialValues={{
-                items: items
+                items: redirectIngredient ? redirectIngredient : items
             }}
-            validateOnChange
+            validateOnBlur
             onSubmit={((values) => {
                 setItems(values.items)
             })}
             validationSchema={validationSchema}
         >
             {({
-                  values, errors, handleChange,
+                  values, errors, handleChange, handleReset,
                   handleBlur, handleSubmit, isValid, dirty
               }) => (
                 <form>
@@ -46,6 +46,7 @@ const SearchField = ({searchType, items, setItems}) => {
                                 name='items'
                                 value={values.items}
                                 onChange={handleChange}
+                                onClick={ (e) => e.target.value = `` }
                                 fullWidth
                                 size='small'
                                 color={`input`}
