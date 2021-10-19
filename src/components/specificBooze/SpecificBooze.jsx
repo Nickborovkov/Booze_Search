@@ -17,6 +17,7 @@ import Skeleton from "@mui/material/Skeleton";
 import {NavLink} from "react-router-dom";
 import InfoIcon from '@mui/icons-material/Info';
 import ListItemIcon from "@mui/material/ListItemIcon";
+import imagePlaceholder from "../../assets/images/imagePlaceholder.jpg"
 
 const SpecificBooze = (props) => {
 
@@ -109,7 +110,7 @@ const SpecificBooze = (props) => {
                                 component="img"
                                 alt="cocktailImage"
                                 height="500"
-                                image={specificCocktail.strDrinkThumb}
+                                image={specificCocktail.strDrinkThumb || imagePlaceholder}
                                 sx={{cursor: `pointer`}}
                                 onClick={() => {
                                     (setModal(true))

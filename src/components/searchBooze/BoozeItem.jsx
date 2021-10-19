@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import {NavLink} from "react-router-dom";
+import imagePlaceholder from "../../assets/images/imagePlaceholder.jpg"
 
 const BoozeItem = ({item}) => {
     return (
@@ -21,7 +22,7 @@ const BoozeItem = ({item}) => {
                     <CardMedia
                         component="img"
                         height="400"
-                        image={item.strDrinkThumb}
+                        image={item.strDrinkThumb || imagePlaceholder}
                         alt="drinkImage"
                     />
                     <CardContent>
