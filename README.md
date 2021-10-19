@@ -1,6 +1,6 @@
 # Booze Search
 
-## Find yuorself a nice booze receipt
+## Find yourself a nice booze receipt
 
 ### [API provided by CocktailDB](https://www.thecocktaildb.com/api.php)
 
