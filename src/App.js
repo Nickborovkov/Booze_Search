@@ -8,7 +8,6 @@ import appTheme from "./utils/theme/appTheme";
 import AppFooter from "./components/footer/Footer";
 import Button from "@mui/material/Button";
 import HomePage from "./components/homePage/HomePage";
-import Ingredients from "./components/ingredients/Ingredients";
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 //Lazy loading
@@ -16,6 +15,8 @@ const Cocktails = lazy( () =>
     import(/* webpackChunkName: "SearchBooze" */"./components/searchBooze/SearchBooze") )
 const SpecificCocktail = lazy( () =>
     import(/* webpackChunkName: "SpecificBooze" */"./components/specificBooze/SpecificBooze") )
+const Ingredients = lazy( () =>
+    import(/* webpackChunkName: "Ingredients" */"./components/ingredients/Ingredients") )
 const ErrorPage = lazy( () =>
     import(/* webpackChunkName: "Error" */"./components/common/errorPage/ErrorPage") )
 
