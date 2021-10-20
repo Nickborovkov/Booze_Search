@@ -14,7 +14,7 @@ const SearchField = ({searchType, items, redirectIngredient, setItems}) => {
         items: yup
             .string()
             .required(`Field can't be empty`)
-            .max(150, `Max length is1 50 symbols`)
+            .max(150, `Max length is 150 symbols`)
             .matches(regexp, `Only english letters and digits`)
     })
 
