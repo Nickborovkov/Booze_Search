@@ -91,7 +91,7 @@ const SpecificBooze = (props) => {
                 <Typography
                     align='center'
                     variant='h3'
-                    mb={5} sx={{color: `#00e676`}}
+                    mb={5} sx={{color: `#333333`}}
                 >
                     {specificCocktail.strDrink}
                 </Typography>

@@ -10,13 +10,13 @@ const HomePage = (props) => {
                 variant="h3"
                 align='center'
                 mt={3}
-                sx={{color: `#00e676`}}
+                sx={{color: `#333333`}}
             >
                 Find yourself a nice booze receipt
             </Typography>
             <Box
                 sx={{display: `flex`, justifyContent: `center`}}
-                mt={10} mb={10}
+                mt={10} mb={20}
             >
                 <Button
                     variant='contained'

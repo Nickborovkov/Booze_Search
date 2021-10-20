@@ -34,13 +34,13 @@ const Ingredients = (props) => {
                             {ingredient.strIngredient}
                         </Typography>
                         <Typography gutterBottom variant="h5" component="div">
-                            <span style={{color: `#00e676`}}>Is alcoholic: </span>{ingredient.strAlcohol || `No info`}
+                            <span style={{color: `#cb5252`}}>Is alcoholic: </span>{ingredient.strAlcohol || `No info`}
                         </Typography>
                         <Typography gutterBottom variant="h5" component="div">
-                            <span style={{color: `#00e676`}}>ABV°: </span>{ingredient.strABV || `No info`}
+                            <span style={{color: `#cb5252`}}>ABV°: </span>{ingredient.strABV || `No info`}
                         </Typography>
                         <Typography gutterBottom variant="p" component="div">
-                            <span style={{color: `#00e676`}}>Description: </span>{ingredient.strDescription  || `No info`}
+                            <span style={{color: `#cb5252`}}>Description: </span>{ingredient.strDescription  || `No info`}
                         </Typography>
                     </CardContent>
                     <CardActions>

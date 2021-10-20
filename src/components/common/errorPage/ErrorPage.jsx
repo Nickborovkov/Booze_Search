@@ -19,8 +19,8 @@ const ErrorPage = (props) => {
             <Typography
                 align='center'
                 variant='h3'
-                mb={5}
-                sx={{color: `#00e676`}}
+                mb={15}
+                sx={{color: `#333333`}}
             >
                 Requested page does not exist
             </Typography>

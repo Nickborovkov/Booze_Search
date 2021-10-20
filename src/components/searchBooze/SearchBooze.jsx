@@ -44,7 +44,7 @@ const SearchBooze = ({searchType}) => {
                 variant="h3"
                 align='center'
                 mt={3}
-                sx={{color: `#00e676`}}
+                sx={{color: `#333333`}}
             >
                 {searchType === `byName` && `Search Cocktails By Name`}
                 {searchType === `byIngredient` && `Search Cocktails By Ingredient`}
