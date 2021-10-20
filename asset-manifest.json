@@ -2,19 +2,19 @@
   "files": {
     "static/js/0.5788d496.chunk.js": "/Booze_Search/static/js/0.5788d496.chunk.js",
     "static/js/0.5788d496.chunk.js.map": "/Booze_Search/static/js/0.5788d496.chunk.js.map",
-    "Error.js": "/Booze_Search/static/js/Error.68608de4.chunk.js",
-    "Error.js.map": "/Booze_Search/static/js/Error.68608de4.chunk.js.map",
-    "Ingredients.js": "/Booze_Search/static/js/Ingredients.7245bec5.chunk.js",
-    "Ingredients.js.map": "/Booze_Search/static/js/Ingredients.7245bec5.chunk.js.map",
-    "SearchBooze.js": "/Booze_Search/static/js/SearchBooze.d69d5edf.chunk.js",
-    "SearchBooze.js.map": "/Booze_Search/static/js/SearchBooze.d69d5edf.chunk.js.map",
-    "SpecificBooze.js": "/Booze_Search/static/js/SpecificBooze.42c8ba94.chunk.js",
-    "SpecificBooze.js.map": "/Booze_Search/static/js/SpecificBooze.42c8ba94.chunk.js.map",
+    "Error.js": "/Booze_Search/static/js/Error.20e44a69.chunk.js",
+    "Error.js.map": "/Booze_Search/static/js/Error.20e44a69.chunk.js.map",
+    "Ingredients.js": "/Booze_Search/static/js/Ingredients.2895dd93.chunk.js",
+    "Ingredients.js.map": "/Booze_Search/static/js/Ingredients.2895dd93.chunk.js.map",
+    "SearchBooze.js": "/Booze_Search/static/js/SearchBooze.7135e27e.chunk.js",
+    "SearchBooze.js.map": "/Booze_Search/static/js/SearchBooze.7135e27e.chunk.js.map",
+    "SpecificBooze.js": "/Booze_Search/static/js/SpecificBooze.081a039f.chunk.js",
+    "SpecificBooze.js.map": "/Booze_Search/static/js/SpecificBooze.081a039f.chunk.js.map",
     "main.css": "/Booze_Search/static/css/main.84e6c52b.chunk.css",
-    "main.js": "/Booze_Search/static/js/main.9c4b6c5f.chunk.js",
-    "main.js.map": "/Booze_Search/static/js/main.9c4b6c5f.chunk.js.map",
-    "runtime-main.js": "/Booze_Search/static/js/runtime-main.8634e60d.js",
-    "runtime-main.js.map": "/Booze_Search/static/js/runtime-main.8634e60d.js.map",
+    "main.js": "/Booze_Search/static/js/main.85c41480.chunk.js",
+    "main.js.map": "/Booze_Search/static/js/main.85c41480.chunk.js.map",
+    "runtime-main.js": "/Booze_Search/static/js/runtime-main.11eabd54.js",
+    "runtime-main.js.map": "/Booze_Search/static/js/runtime-main.11eabd54.js.map",
     "static/css/7.fbf11a07.chunk.css": "/Booze_Search/static/css/7.fbf11a07.chunk.css",
     "static/js/7.fcc04f2a.chunk.js": "/Booze_Search/static/js/7.fcc04f2a.chunk.js",
     "static/js/7.fcc04f2a.chunk.js.map": "/Booze_Search/static/js/7.fcc04f2a.chunk.js.map",
@@ -33,10 +33,10 @@
     "static/media/700.css": "/Booze_Search/static/media/roboto-vietnamese-700-normal.3096f18a.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.8634e60d.js",
+    "static/js/runtime-main.11eabd54.js",
     "static/css/7.fbf11a07.chunk.css",
     "static/js/7.fcc04f2a.chunk.js",
     "static/css/main.84e6c52b.chunk.css",
-    "static/js/main.9c4b6c5f.chunk.js"
+    "static/js/main.85c41480.chunk.js"
   ]
 }
