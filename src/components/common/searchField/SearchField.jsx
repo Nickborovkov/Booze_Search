@@ -30,7 +30,7 @@ const SearchField = ({searchType, items, redirectIngredient, setItems}) => {
             validationSchema={validationSchema}
         >
             {({
-                  values, errors, handleChange, handleReset,
+                  values, errors, handleChange,
                   handleBlur, handleSubmit, isValid, dirty
               }) => (
                 <form>

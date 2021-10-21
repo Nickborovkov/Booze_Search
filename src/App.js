@@ -22,7 +22,7 @@ const ErrorPage = lazy( () =>
 
 const App = () => {
 
-    //Back ti top button listener
+    //Back to top button listener
     const [showButton, setShowButton] = useState(false)
 
     useEffect(() => {
